@@ -166,6 +166,10 @@ DOWNLOAD_APK() {
             exit 1
         fi
         echo "XAPK [${GAME_BUNDLE_ID}.xapk] 下载成功！"
+
+        echo "当前目录内文件列表:"
+        ls -la "${DOWNLOAD_DIR}"
+        
         echo "正在从 XAPK 中提取文件..."
         unzip -o "${DOWNLOAD_DIR}/${GAME_BUNDLE_ID}.xapk" -d "${DOWNLOAD_DIR}/${GAME_BUNDLE_ID}"
         if [ $? -ne 0 ]; then
